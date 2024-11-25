@@ -144,7 +144,7 @@
 /*** Navbar ***/
 
 .navbar-logo {
-    height: 50px; /* Adjust height */
+    height: 100px; /* Adjust height */
     width: auto; /* Maintain aspect ratio */
     max-width: 150px; /* Optional: Set max width */
 }
