@@ -144,9 +144,9 @@
 /*** Navbar ***/
 
 .navbar-logo {
-    height: 100px; /* Adjust height */
+    height: 80px; /* Adjust height */
     width: auto; /* Maintain aspect ratio */
-    max-width: 150px; /* Optional: Set max width */
+    max-width: 100px; /* Optional: Set max width */
 }
 
 .sticky-top,
@@ -259,6 +259,20 @@
 #searchModal .modal-content {
     background: rgba(250, 250, 250, .6);
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 10px; /* Adjust padding */
+        height: auto;       /* Set auto height */
+    }
+
+    .navbar-brand, 
+    .navbar-nav .nav-link {
+        font-size: 10px; /* Reduce font size */
+    }
+}
+
+
 /*** Navbar End ***/
 
 
@@ -427,6 +441,31 @@
         left: 65%;
     }
 }
+
+@media (max-width: 768px) {
+    .owl-prev,
+    .owl-next {
+        width: 40px; /* Smaller width */
+        height: 40px; /* Smaller height */
+        padding: 10px; /* Adjust padding */
+        top: 80%; /* Move buttons lower */
+    }
+
+    .owl-prev {
+        left: 10px; /* Adjust position */
+    }
+
+    .owl-next {
+        right: 10px; /* Adjust position */
+    }
+}
+@media (max-width: 576px) {
+    .owl-prev,
+    .owl-next {
+        display: none; /* Hide buttons */
+    }
+}
+
 
 
 
