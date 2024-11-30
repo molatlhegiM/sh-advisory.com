@@ -139,3 +139,15 @@
 
 })(jQuery);
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".logo-carousel");
+    const clone = carousel.innerHTML; // Clone the logos to create a seamless loop
+    carousel.innerHTML += clone;
+});
+
+
+
+
+

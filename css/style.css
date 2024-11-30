@@ -298,11 +298,11 @@
 .owl-prev,
 .owl-next {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    top: 50%;
+    width: 50px;
+    height: 50px;
+    top: 25%;
     transform: translateY(-50%);
-    padding: 20px 20px;
+    padding: 10px 10px;
     border-radius: 40px;
     background: var(--bs-primary);
     color: var(--bs-white);
@@ -445,18 +445,18 @@
 @media (max-width: 768px) {
     .owl-prev,
     .owl-next {
-        width: 40px; /* Smaller width */
-        height: 40px; /* Smaller height */
-        padding: 10px; /* Adjust padding */
-        top: 80%; /* Move buttons lower */
+        width: 10px; /* Smaller width */
+        height: 10px; /* Smaller height */
+        padding: 25px; /* Adjust padding */
+        top: 40%; /* Move buttons lower */
     }
 
     .owl-prev {
-        left: 10px; /* Adjust position */
+        left: 5px; /* Adjust position */
     }
 
     .owl-next {
-        right: 10px; /* Adjust position */
+        right: 5px; /* Adjust position */
     }
 }
 @media (max-width: 576px) {
@@ -465,23 +465,6 @@
         display: none; /* Hide buttons */
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*** Header Carousel End ***/
 
@@ -972,6 +955,551 @@
     background: var(--bs-primary);
 }
 /*** Testimonial End ***/
+
+
+
+/*********Vision and Mission start****************/
+
+.vision-mission-section {
+    padding: 100px 50px;
+}
+
+.vision-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Ensures the image is a manageable size */
+    aspect-ratio: 1 / 1; /* Maintains square shape */
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.vision h3, .mission h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.vision p, .mission p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .vision-mission-section .row {
+        flex-direction: column;
+    }
+    
+    .vision-image {
+        margin-bottom: 20px;
+    }
+}
+
+
+/********Vision and Mission End****************/
+
+
+
+/**********core values start**************/
+
+/* Core Values Section */
+.core-values {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.core-image img.rounded-portrait {
+    width: 100%;
+    max-width: 450px;
+    height: 600px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image scales nicely */
+    border-radius: 15px;
+}
+
+.core-values h2 {
+    font-size: 2.5rem;
+    color: #032140;
+}
+
+.core-values p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.core-values p strong {
+    color: #022243;
+}
+
+.core-values .lead {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+ul.list-unstyled li i {
+    font-size: 1.5rem; /* Size of the icon */
+    vertical-align: middle; /* Align icons with text */
+}
+
+
+
+
+/********core values end************/
+
+/********our accreditations start************/
+
+
+.accreditation {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.logo-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.logo-carousel {
+    display: flex;
+    gap: 50px; /* Adjust spacing between logos */
+    animation: scroll 15s linear infinite; /* Adjust speed */
+}
+
+.logo-carousel img {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%); /* Optional styling */
+    transition: filter 0.3s ease;
+}
+
+.logo-carousel img:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/********our accreditations end ************/
+
+
+
+/********Audit Assurance start ************/
+.audit-section {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Text color */
+}
+
+.service-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-box h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #022448;
+}
+
+.service-box ul {
+    padding-left: 0;
+}
+
+.service-box ul li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.audit-section h2, 
+.audit-section h3 {
+    color: #021f3d; /* Primary theme color */
+    font-weight: bold;
+}
+
+.audit-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.audit-section p:last-of-type {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
+
+
+/********Audit Assurance start ************/
+
+/********Advisory ************/
+.advisory-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.line-container {
+    margin-top: 20px;
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+}
+
+.line:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.line-left, .line-right {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+.line-left {
+    text-align: left;
+}
+
+.line-right {
+    text-align: right;
+}
+
+/********Advisory ************/
+
+
+
+/********Governance start ************/
+
+
+
+.governance-section {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.governance-content {
+    margin-bottom: 30px;
+}
+
+.governance-content p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.governance-service-offerings {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.service-heading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--bs-dark);
+}
+
+.service-bars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.service-bar {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px 20px;
+    width: 45%;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--bs-dark);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.service-bar:hover {
+    background: var(--bs-primary);
+    color: var(--bs-white);
+    transform: translateY(-5px);
+}
+
+.service-bar span {
+    display: inline-block;
+}
+
+/********Governance end************/
+
+/********Business Consulting start************/
+.business-consulting {
+    background-color: #f9f9f9;
+}
+
+.business-consulting h3 {
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.business-consulting p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-box {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.service-box ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.service-box ul li:last-child {
+    border-bottom: none;
+}
+
+.img-fluid {
+    object-fit: cover;
+}
+
+
+/********Business Consulting end************/
+
+/********Training academy************/
+.training-academy {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.training-academy h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.training-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.left-column, .right-column {
+    flex: 1;
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.training-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.training-form input, .training-form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.training-form select:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.training-form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* Ensure button spans full width on smaller screens */
+}
+
+.training-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .training-container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Ensure each column takes full width */
+        margin-bottom: 1.5rem; /* Add spacing between stacked columns */
+    }
+
+    .training-form input, .training-form select, .training-form button {
+        font-size: 1rem; /* Adjust input font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .training-academy h3 {
+        font-size: 1.5rem; /* Reduce heading size on very small screens */
+    }
+
+    .training-form input, .training-form select {
+        padding: 0.5rem; /* Adjust padding for smaller inputs */
+    }
+
+    .training-form button {
+        padding: 0.6rem; /* Adjust button padding */
+    }
+}
+
+/********Training Acadeny end ************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*** FAQ'S Start ***/
 .faq {
