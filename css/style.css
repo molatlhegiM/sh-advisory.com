@@ -1754,6 +1754,23 @@ ul.list-unstyled li i {
 /******* small business/ sole traders/ owner managed start ************/
 
 
+/******* Gallery start ************/
+
+.gallery-item {
+    overflow: hidden;
+}
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/******* Gallery end ************/
+
+
 
 
 
