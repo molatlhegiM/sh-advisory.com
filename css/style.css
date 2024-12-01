@@ -1403,6 +1403,358 @@ ul.list-unstyled li i {
 /********Training Acadeny end ************/
 
 
+/********Financial sector start ************/
+.financial-services-sector {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .financial-services-sector h3 {
+    text-align: center;
+    margin-bottom: 1.0rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .financial-services-sector p {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .financial-services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-container {
+    flex: 2;
+  }
+  
+  .text-container p {
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .financial-services-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .image-container {
+      max-width: 100%;
+    }
+  
+    .text-container {
+      text-align: left;
+    }
+  }
+  
+
+/********Financial sector  end ************/
+
+
+/********heathcare sector  start ************/
+
+/* Styling for the Healthcare Industry Section */
+.healthcare-industry {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .healthcare-industry h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Increased font size for the heading */
+  }
+  
+  .healthcare-industry p {
+    text-align: justify;
+    margin: 0 auto 1.5rem auto;
+    max-width: 800px;
+    line-height: 1.8; /* Better line spacing */
+    font-size: 1.2rem; /* Increased font size for paragraph */
+  }
+  
+  .healthcare-image-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Ensures no content spills over */
+  }
+  
+  .healthcare-image-container img {
+    width: 100%; /* Ensures the image spans the full width of the section */
+    height: 350px; /* Maintains the reduced height */
+    object-fit: cover; /* Keeps the image visually appealing */
+    border-radius: 8px;
+  }
+  
+
+/********healthcare sector  end ************/
+
+
+/********public sector start ************/
+/* Styling for the Public Sector Section */
+.public-sector {
+    padding: 2rem;
+    background-color: #f4f4f4;
+    border-top: 5px solid #007BFF; /* Adds a bold top border for emphasis */
+  }
+  
+  .public-sector h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0056b3; /* Subtle blue for a professional tone */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .public-sector .content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white; /* White background for a clean card effect */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    animation: fadeIn 1s ease-in-out; /* Subtle animation */
+  }
+  
+  .public-sector p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Subtle hover effect for the content box */
+  .public-sector .content:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increases shadow on hover */
+    transform: translateY(-5px); /* Gives a "lift" effect */
+    transition: all 0.3s ease;
+  }
+  
+  /* Keyframes for the fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+/********public sector  end ************/
+
+
+/********private sector  start ************/
+
+/* Styling for the Private Sector Section */
+.private-sector {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .private-sector h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #007BFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .private-sector .content {
+    display: flex;
+    flex-wrap: wrap; /* Makes it responsive for smaller screens */
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .private-sector .image {
+    flex: 1;
+    min-width: 300px; /* Ensures the image retains size on smaller screens */
+  }
+  
+  .private-sector .image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .private-sector .text {
+    flex: 2;
+  }
+  
+  .private-sector .text p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .private-sector .content {
+      flex-direction: column; /* Stacks the image and text */
+      text-align: center;
+    }
+  
+    .private-sector .text {
+      padding: 0 1rem; /* Adds padding to the text for smaller screens */
+    }
+  }
+  
+
+/********private sector  end ************/
+
+
+
+
+
+/********Not for Profit sector/charities/NGO'S  start ************/
+
+/* Styling for the Non-Profit Sector Section */
+.non-profit-sector {
+    padding: 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .non-profit-sector h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #007BFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .non-profit-sector .image {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .non-profit-sector .image img {
+    width: 100%;
+    max-width: 1200px; /* Ensures the image doesn't get too large on larger screens */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Styling for the Non-Profit Sector Section */
+.non-profit-sector .image img {
+    width: 100%;
+    max-width: 1200px; /* Keeps the width responsive */
+    max-height: 350px; /* Reduces the height */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the area */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .non-profit-sector .text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .non-profit-sector .text p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .non-profit-sector .image img {
+      width: 100%;
+      border-radius: 6px;
+    }
+  
+    .non-profit-sector .text {
+      padding: 0 1rem;
+    }
+  }
+  
+
+/********Not for Profit sector/charities/NGO'S  end ************/
+
+
+
+
+/******* small business/ sole traders/ owner managed start ************/
+
+/* Small Business Section */
+.small-business {
+    padding: 2rem;
+  }
+  
+  .small-business h2 {
+    text-align: center;
+    font-size: 2rem; /* Larger heading font size */
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #010541; /* Darker text for better readability */
+  }
+  
+  .small-business .top-section {
+    display: flex;
+    flex-wrap: wrap; /* Makes the layout responsive */
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .small-business .image-container {
+    flex: 1 1 40%; /* The image takes 40% of the row */
+    text-align: center;
+  }
+  
+  .small-business .image-container img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .small-business .text-container {
+    flex: 1 1 55%; /* The paragraph takes 55% of the row */
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.8; /* Better readability */
+  }
+  
+  .small-business .bottom-section {
+    margin-top: 2rem;
+    font-size: 1.2rem; /* Increased font size */
+    line-height: 1.8; /* Better readability */
+  }
+  
+    
+/******* small business/ sole traders/ owner managed start ************/
+
+
+
 
 
 
