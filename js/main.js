@@ -148,6 +148,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.getElementById('book-training-button').addEventListener('click', function () {
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const trainingProgram = document.getElementById('training-program').value;
+  
+    // Validate form fields
+    if (!name || !email || !trainingProgram) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+  
+    // Construct the mailto link
+    const subject = encodeURIComponent('Training Booking Request');
+    const body = encodeURIComponent(
+      `Hello,\n\nI would like to book the following training program:\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Training Program: ${trainingProgram}\n\n` +
+        `Best regards,\n${name}`
+    );
+    const mailtoLink = `mailto:info@shadvisorylimited.com?subject=${subject}&body=${body}`;
+  
+    // Redirect to the mailto link
+    window.location.href = mailtoLink;
+  });
+  
+
 
 
 
