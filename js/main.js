@@ -174,7 +174,43 @@ document.getElementById('book-training-button').addEventListener('click', functi
     // Redirect to the mailto link
     window.location.href = mailtoLink;
   });
+
   
+  
+
+    $(document).ready(function () {
+        $("#contactForm").on("submit", function (e) {
+            e.preventDefault(); // Prevent form from reloading the page
+
+            $.ajax({
+                url: "send_email.php",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function (response) {
+                    if (response.trim() === "success") {
+                        $("#formResponse")
+                            .html("Message sent successfully!")
+                            .css("color", "green")
+                            .fadeIn();
+                        $("#contactForm")[0].reset(); // Reset form fields
+                    } else {
+                        $("#formResponse")
+                            .html("Failed to send message. Please try again.")
+                            .css("color", "red")
+                            .fadeIn();
+                    }
+                },
+                error: function () {
+                    $("#formResponse")
+                        .html("An error occurred. Please try again.")
+                        .css("color", "red")
+                        .fadeIn();
+                },
+            });
+        });
+    });
+
+
 
 
 
