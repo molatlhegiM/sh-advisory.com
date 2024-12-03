@@ -212,6 +212,43 @@ document.getElementById('book-training-button').addEventListener('click', functi
 
 
 
+    document.getElementById("newsletterForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
+    
+        const email = document.getElementById("newsletterEmail").value;
+        const responseElement = document.getElementById("newsletterResponse");
+    
+        fetch("newsletter_signup.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: `email=${encodeURIComponent(email)}`,
+        })
+            .then((response) => response.text())
+            .then((result) => {
+                if (result.trim() === "success") {
+                    responseElement.textContent = "Thank you for subscribing!";
+                    responseElement.style.color = "green";
+                } else if (result.trim() === "invalid_email") {
+                    responseElement.textContent = "Please enter a valid email address.";
+                    responseElement.style.color = "orange";
+                } else {
+                    responseElement.textContent = "Something went wrong. Please try again.";
+                    responseElement.style.color = "red";
+                }
+                responseElement.style.display = "block";
+            })
+            .catch(() => {
+                responseElement.textContent = "An error occurred. Please try again.";
+                responseElement.style.color = "red";
+                responseElement.style.display = "block";
+            });
+    });
+    
+
+
+
 
 
 

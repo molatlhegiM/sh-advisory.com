@@ -83,4 +83,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $to = "info@shadvisorylimited.com";
+        $subject = "New Newsletter Signup";
+        $message = "A new user has signed up for the newsletter:\n\nEmail: $email";
+        $headers = "From: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+        if (mail($to, $subject, $message, $headers)) {
+            echo "success";
+        } else {
+            echo "error";
+        }
+    } else {
+        echo "invalid_email";
+    }
+} else {
+    echo "Invalid request method.";
+}
+?>
+
+
 
