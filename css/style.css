@@ -144,14 +144,14 @@
 /*** Navbar ***/
 
 .navbar-logo {
-    height: 80px; /* Adjust height */
+    height: 110px; /* Adjust height */
     width: auto; /* Maintain aspect ratio */
-    max-width: 100px; /* Optional: Set max width */
+    max-width: 250px; /* Optional: Set max width */
 }
 
 .sticky-top,
 .sticky-top .container {
-    transition: 0.5s !important;
+    transition: none !important;
 }
 
 .navbar .navbar-nav .nav-item.nav-link,
@@ -286,11 +286,10 @@
 
 
 
-
 .single-video-header {
     position: relative;
     width: 100%;
-    height: 100vh; /* Fullscreen */
+    height: 100vh; /* Default fullscreen height */
     overflow: hidden;
 }
 
@@ -330,6 +329,7 @@
     font-size: 3rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
+    color: #ebeef1;
 }
 
 .content p {
@@ -354,6 +354,22 @@
     color: #fff;
 }
 
+/* Adjust height for larger screens */
+@media (min-width: 1200px) {
+    .single-video-header {
+        height: 70vh; /* Reduce height to 70% of viewport */
+    }
+
+    .video-container {
+        height: 70vh; /* Ensure video container matches */
+    }
+
+    .video-bg {
+        height: 70vh; /* Keep video height in sync */
+    }
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .content h1 {
         font-size: 2rem;
@@ -407,7 +423,7 @@
     top: -150px;
     right: -150px;
     border-radius: 200px;
-    border: 80px solid rgba(68, 210, 246, 0.2);
+    border: 80px solid rgba(10, 20, 78, 0.2);
     animation: RotateMoveCircle 10s linear infinite;
     background: transparent;
     z-index: 2 !important;
@@ -1092,67 +1108,81 @@ ul.list-unstyled li i {
 
 
 /********Governance start ************/
-
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #ffffff;
+}
 
 .governance-section {
-    padding: 40px 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    background: #001f3f; /* Dark Blue */
+    border-radius: 15px;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    text-align: center;
 }
 
 .governance-content {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .governance-content p {
     margin-bottom: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cfd8e3; /* Light Blue-Grey for text */
+    text-align: justify;
 }
 
 .governance-service-offerings {
-    text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .service-heading {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--bs-dark);
+    font-size: 2rem;
+    color: #ffb347; /* Lighter Orange */
+    margin-bottom: 25px;
 }
 
 .service-bars {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .service-bar {
     position: relative;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px 20px;
-    width: 45%;
+    background: #ffffff; /* White background */
+    border: 2px solid #ffb347; /* Lighter Orange border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
     text-align: center;
-    font-size: 1rem;
-    color: var(--bs-dark);
-    transition: transform 0.3s, background 0.3s;
+    font-size: 1.1rem;
+    color: #001f3f; /* Dark Blue text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .service-bar:hover {
-    background: var(--bs-primary);
-    color: var(--bs-white);
-    transform: translateY(-5px);
+    background-color: #ffb347; /* Lighter Orange on hover */
+    color: #001f3f; /* Dark Blue text on hover */
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .service-bar span {
-    display: inline-block;
+    display: block;
+    font-weight: bold;
 }
+
+
 
 /********Governance end************/
 
@@ -1409,58 +1439,68 @@ ul.list-unstyled li i {
 
 
 /********public sector start ************/
-/* Styling for the Public Sector Section */
-.public-sector {
-    padding: 2rem;
-    background-color: #f4f4f4;
-    border-top: 5px solid #007BFF; /* Adds a bold top border for emphasis */
-  }
-  
-  .public-sector h3 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #0056b3; /* Subtle blue for a professional tone */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .public-sector .content {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white; /* White background for a clean card effect */
-    padding: 1.5rem;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #eae2e2;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
-    animation: fadeIn 1s ease-in-out; /* Subtle animation */
-  }
-  
-  .public-sector p {
-    text-align: justify;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #031a49;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-content {
+    font-size: 1.1em;
     line-height: 1.8;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    color: #333;
-  }
-  
-  /* Subtle hover effect for the content box */
-  .public-sector .content:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increases shadow on hover */
-    transform: translateY(-5px); /* Gives a "lift" effect */
-    transition: all 0.3s ease;
-  }
-  
-  /* Keyframes for the fade-in effect */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+    text-align: justify;
+}
+
+.highlight {
+    color: #031f41;
+    font-weight: bold;
+}
+
+.section-content ul {
+    margin: 15px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.section-content ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.section-content ul li::before {
+    content: "✔";
+    color: #0b0b0b;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+    text-align: center;
+}
+
   
 
 /********public sector  end ************/
@@ -1478,7 +1518,7 @@ ul.list-unstyled li i {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #007BFF;
+    color: #011b36;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -1546,7 +1586,7 @@ ul.list-unstyled li i {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #007BFF;
+    color: #021931;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -1675,7 +1715,7 @@ ul.list-unstyled li i {
 
 /******* career start ************/
 .bg-primary {
-    background-color: #007bff !important;
+    background-color: #c5921a !important;
 }
 
 .bg-primary h1 {
@@ -1689,13 +1729,13 @@ ul.list-unstyled li i {
 }
 
 .btn-primary {
-    background-color: #007bff;
+    background-color: #d9dee5;
     border: none;
     transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #c5921a;
 }
 
 
@@ -1722,7 +1762,7 @@ body {
   
   h1, h2 {
     text-align: center;
-    color: #004080;
+    color: #011e3a;
   }
   
   .block {
@@ -1749,7 +1789,7 @@ body {
   
   .download-button {
     display: inline-block;
-    background-color: #004080;
+    background-color: #01203f;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -1900,42 +1940,54 @@ body {
 /*** Footer Start ***/
 .footer {
     background: var(--bs-dark);
+    color: #ffffff; /* Default text color: white */
 }
+
 .footer .footer-item a {
     line-height: 35px;
-    color: var(--bs-body);
+    color: #ffffff; /* Default link color: white */
     transition: 0.5s;
 }
 
 .footer .footer-item p {
     line-height: 35px;
+    color: #ffffff; /* Default paragraph color: white */
 }
 
 .footer .footer-item a:hover {
     letter-spacing: 1px;
-    color: var(--bs-primary);
+    color: var(--bs-primary); /* Changes to orange on hover */
 }
 
 .footer .footer-item-post a {
     transition: 0.5s;
+    color: #ffffff; /* Default color: white */
 }
 
 .footer .footer-item-post a:hover {
-    color: var(--bs-primary) !important;
+    color: var(--bs-primary) !important; /* Changes to orange on hover */
 }
 
 .footer .footer-item-post .footer-btn a {
     transition: 0.5s;
+    color: #ffffff; /* Default button text color: white */
 }
 
 .footer .footer-item-post .footer-btn a:hover {
-    color: var(--bs-dark);
+    color: var(--bs-primary); /* Changes to orange on hover */
+    background-color: transparent; /* Optional: No background highlight */
 }
+
 /*** Footer End ***/
 
 /*** copyright Start ***/
 .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: var(--bs-dark) !important;
+    color: #ffffff; /* Default copyright text color: white */
+}
+
+.copyright:hover {
+    color: var(--bs-primary); /* Changes to orange on hover */
 }
 /*** copyright end ***/
