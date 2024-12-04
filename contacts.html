@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                                 <div class="nav-item dropdown">
-                                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">service</a>
+                                    <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                                     <div class="dropdown-menu">
                                         <a href="audit-assurance.html" class="dropdown-item">Audit and Assurance</a>
                                         <a href="advisory.html" class="dropdown-item">Advisory</a>
@@ -160,12 +160,18 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <form id="contactForm">
+                        <form id="contactForm" onsubmit="sendMail(event)">
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-xl-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="surname" name="surname" placeholder="Your Surname">
+                                        <label for="surname">Your Surname</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
@@ -178,12 +184,6 @@
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Phone">
                                         <label for="phone">Your Phone</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="project" name="project" placeholder="Your Project">
-                                        <label for="project">Your Project</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -203,6 +203,9 @@
                                 </div>
                             </div>
                         </form>
+                        
+                        
+                        
                         
                         <!-- Feedback Message -->
                         <div id="formResponse" style="margin-top: 10px; display: none;"></div>
@@ -249,12 +252,11 @@
                 <div class="footer-item d-flex flex-column">
                     <h4 class="text-white mb-4">Explore</h4>
                     <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
-                    <a href="audit-assurance.html"><i class="fas fa-angle-right me-2"></i> Services</a>
                     <a href="core-values.html"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                    <a href="our-journey.html"><i class="fas fa-angle-right me-2"></i> Latest Projects</a>
-                    <a href="index.html"><i class="fas fa-angle-right me-2"></i> testimonial</a>
                     <a href="our-people.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
-                    <a href="contacts.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                    <a href="audit-assurance.html"><i class="fas fa-angle-right me-2"></i> Services</a>
+                    <a href="#Our Feedbacks"><i class="fas fa-angle-right me-2"></i> Client Testimonials</a>
+                    <a href="contacts.html"><i class="fas fa-angle-right me-2"></i> Contact Us</a>                        
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-xl-3">
@@ -323,6 +325,27 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function sendMail(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get form values
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+    
+            // Construct the mailto URL
+            const mailtoLink = `mailto:info@shadvisorylimited.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${name} ${surname}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+            )}`;
+    
+            // Open the mailto link
+            window.location.href = mailtoLink;
+        }
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
