@@ -183,14 +183,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row g-4 text-center align-items-center justify-content-center">
                             <div class="col-sm-4">
-                                <div class="bg-dark rounded p-4">
+                                <div class="bg-primary rounded p-4">
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <span class="counter-value fs-1 fw-bold text-white" data-toggle="counter-up">8</span>
-                                        <h4 class="text-white fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                                        <span class="counter-value fs-1 fw-bold text-dark" data-toggle="counter-up">8</span>
+                                        <h4 class="text-dark fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
                                     </div>
                                     <div class="w-100 d-flex align-items-center justify-content-center">
-                                        <p class="mb-0">Years Of Experience</p>
+                                        <p class="text-white mb-0">Years Of Experience</p>
                                     </div>
                                 </div>
                             </div>
@@ -493,14 +494,32 @@
                                 <p class="mb-3">Subscribe to our newsletter for the latest updates, insights, and exclusive offers. Stay informed and ahead in the game!</p>
                                 <div class="position-relative mx-auto rounded-pill">
                                     <form id="newsletterForm">
-                                        <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="email" name="email" id="newsletterEmail" placeholder="Enter your email" required>
-                                        <button type="submit" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                                        <input 
+                                            class="form-control rounded-pill w-100 py-3 ps-4 pe-5" 
+                                            type="email" 
+                                            name="email" 
+                                            id="newsletterEmail" 
+                                            placeholder="Enter your email" 
+                                            required
+                                        >
+                                        <button 
+                                            type="submit" 
+                                            class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2"
+                                        >
+                                            SignUp
+                                        </button>
                                     </form>
-                                    <p id="newsletterResponse" style="display:none; margin-top: 10px;"></p>
+                                    <p 
+                                        id="newsletterResponse" 
+                                        style="display:none; margin-top: 10px; color: green; font-weight: bold;"
+                                    >
+                                        Subscription received! Thank you.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="text-white mb-4">Explore</h4>

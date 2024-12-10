@@ -246,6 +246,56 @@ document.getElementById('book-training-button').addEventListener('click', functi
             });
     });
     
+// JavaScript to handle form submission
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+    const emailInput = document.getElementById('newsletterEmail');
+    const responseMessage = document.getElementById('newsletterResponse');
+
+    if (emailInput.value) {
+        // Display the notification message
+        responseMessage.style.display = 'block';
+        responseMessage.textContent = 'Subscription received! Thank you.';
+        
+        // Clear the email input field
+        emailInput.value = '';
+
+        // Hide the notification after a few seconds
+        setTimeout(() => {
+            responseMessage.style.display = 'none';
+        }, 5000); // 5 seconds
+    }
+});
+
+
+function sendContactMessage(event) {
+    event.preventDefault(); // Prevent the form from reloading the page
+
+    const form = document.getElementById("contactForm");
+    const formData = new FormData(form);
+    const responseMessage = document.getElementById("responseMessage");
+
+    fetch("path_to_your_php_script.php", {
+        method: "POST",
+        body: formData,
+    })
+        .then((response) => response.text())
+        .then((data) => {
+            if (data.trim() === "success") {
+                responseMessage.style.color = "green";
+                responseMessage.textContent = "Your message was sent successfully!";
+            } else {
+                responseMessage.style.color = "red";
+                responseMessage.textContent = "There was an error sending your message. Please try again.";
+            }
+            responseMessage.style.display = "block";
+        })
+        .catch(() => {
+            responseMessage.style.color = "red";
+            responseMessage.textContent = "An unexpected error occurred. Please try again.";
+            responseMessage.style.display = "block";
+        });
+}
 
 
 

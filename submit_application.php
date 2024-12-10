@@ -1,111 +1,75 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $job_type = htmlspecialchars($_POST['job_type']);
-    $message = htmlspecialchars($_POST['message']);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Identify the form
+    $form_id = isset($_POST['form_id']) ? $_POST['form_id'] : '';
+
+    // Common variables
     $to = "info@shadvisorylimited.com";
-    $subject = "New Job Application";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    
-    // File attachment handling
-    if (isset($_FILES['resume']) && $_FILES['resume']['error'] == UPLOAD_ERR_OK) {
-        $file_tmp = $_FILES['resume']['tmp_name'];
-        $file_name = $_FILES['resume']['name'];
-        $file_type = $_FILES['resume']['type'];
-        $file_size = $_FILES['resume']['size'];
+    $headers = "Content-Type: text/plain; charset=UTF-8\r\n";
 
-        $boundary = md5(uniqid(time()));
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
+    switch ($form_id) {
+        case "contactForm":
+            $name = htmlspecialchars($_POST['name']);
+            $surname = htmlspecialchars($_POST['surname']);
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+            $phone = htmlspecialchars($_POST['phone']);
+            $subject = htmlspecialchars($_POST['subject']);
+            $message = htmlspecialchars($_POST['message']);
 
-        $message_body = "--$boundary\r\n";
-        $message_body .= "Content-Type: text/plain; charset=UTF-8\r\n";
-        $message_body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-        $message_body .= "Name: $name\n";
-        $message_body .= "Email: $email\n";
-        $message_body .= "Phone: $phone\n";
-        $message_body .= "Job Type: $job_type\n";
-        $message_body .= "Message: $message\n\n";
-        
-        // Add attachment
-        $file_content = chunk_split(base64_encode(file_get_contents($file_tmp)));
-        $message_body .= "--$boundary\r\n";
-        $message_body .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
-        $message_body .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
-        $message_body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $message_body .= "$file_content\r\n";
-        $message_body .= "--$boundary--";
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Invalid email address. Please try again.";
+                exit;
+            }
 
-        $mail_sent = mail($to, $subject, $message_body, $headers);
-        if ($mail_sent) {
-            echo "Application submitted successfully!";
-        } else {
-            echo "Failed to send application. Please try again.";
-        }
-    } else {
-        echo "Please attach a valid resume file.";
-    }
-}
-?>
+            $email_subject = "Contact Form Submission: $subject";
+            $email_body = "Name: $name $surname\nEmail: $email\nPhone: $phone\nSubject: $subject\nMessage:\n$message\n";
 
+            if (mail($to, $email_subject, $email_body, $headers)) {
+                echo "Your message has been successfully sent! Thank you for contacting us.";
+            } else {
+                echo "There was an error sending your message. Please try again later.";
+            }
+            break;
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $project = htmlspecialchars($_POST['project']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+        case "newsletterForm":
+            $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-    $to = "info@shadvisorylimited.com"; // Recipient email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Invalid email address. Please try again.";
+                exit;
+            }
 
-    $full_message = "Name: $name\n";
-    $full_message .= "Email: $email\n";
-    $full_message .= "Phone: $phone\n";
-    $full_message .= "Project: $project\n";
-    $full_message .= "Subject: $subject\n";
-    $full_message .= "Message:\n$message\n";
+            $email_subject = "New Newsletter Signup";
+            $email_body = "A new user has signed up for the newsletter:\n\nEmail: $email";
 
-    if (mail($to, $subject, $full_message, $headers)) {
-        echo "success";
-    } else {
-        echo "error";
+            if (mail($to, $email_subject, $email_body, $headers)) {
+                echo "Thank you for subscribing to our newsletter!";
+            } else {
+                echo "There was an error. Please try again later.";
+            }
+            break;
+
+        case "jobApplicationForm":
+            $name = htmlspecialchars($_POST['name']);
+            $email = htmlspecialchars($_POST['email']);
+            $phone = htmlspecialchars($_POST['phone']);
+            $job_type = htmlspecialchars($_POST['job_type']);
+            $message = htmlspecialchars($_POST['message']);
+
+            $email_subject = "New Job Application";
+            $email_body = "Name: $name\nEmail: $email\nPhone: $phone\nJob Type: $job_type\nMessage:\n$message\n";
+
+            if (mail($to, $email_subject, $email_body, $headers)) {
+                echo "Your application has been successfully submitted!";
+            } else {
+                echo "There was an error sending your application. Please try again.";
+            }
+            break;
+
+        default:
+            echo "Invalid form submission.";
     }
 } else {
     echo "Invalid request method.";
 }
 ?>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $to = "info@shadvisorylimited.com";
-        $subject = "New Newsletter Signup";
-        $message = "A new user has signed up for the newsletter:\n\nEmail: $email";
-        $headers = "From: $email\r\n";
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-        if (mail($to, $subject, $message, $headers)) {
-            echo "success";
-        } else {
-            echo "error";
-        }
-    } else {
-        echo "invalid_email";
-    }
-} else {
-    echo "Invalid request method.";
-}
-?>
-
-
-

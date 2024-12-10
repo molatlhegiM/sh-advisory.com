@@ -112,7 +112,7 @@
                 <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h4>
                 <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    
                     <li class="breadcrumb-item active text-primary">Contact</li>
                 </ol>    
             </div>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <form id="contactForm" onsubmit="sendMail(event)">
+                        <form id="contactForm" onsubmit="sendContactMessage(event)">
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
@@ -202,7 +202,9 @@
                                     <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                 </div>
                             </div>
+                            <p id="responseMessage" style="margin-top: 10px; display: none;"></p>
                         </form>
+                        
                         
                         
                         
