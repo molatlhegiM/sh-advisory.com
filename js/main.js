@@ -299,6 +299,35 @@ function sendContactMessage(event) {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const forms = document.querySelectorAll("form");
+    forms.forEach(form => {
+        form.addEventListener("submit", async event => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const formId = form.id || form.dataset.formId;
+            formData.append("form_id", formId);
+
+            try {
+                const response = await fetch("form-handler.php", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const result = await response.json();
+                alert(result.message);
+            } catch (error) {
+                console.error("Error submitting form:", error);
+                alert("There was an issue submitting the form. Please try again.");
+            }
+        });
+    });
+});
+
+
+
+
 
 
 
